@@ -1,3 +1,12 @@
+#Project
+
+![animes-naruto](https://user-images.githubusercontent.com/79313483/141136711-02f83c64-ad67-4143-ade2-360e291f1de8.gif)
+
+
+![animes-pokemon](https://user-images.githubusercontent.com/79313483/141136509-64954fac-e6f1-48cd-8604-85f8cadfe377.gif)
+
+![animes-one-piece](https://user-images.githubusercontent.com/79313483/141136519-38a42a0a-881d-424a-81a8-ad73444685ab.gif)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
