@@ -1,0 +1,29 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: 700;
+
+}
+.App {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.input-container {
+    padding-bottom: 20px;
+}
+
+.animes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    list-style: none;
+    grid-gap: 1.5rem;
+}
+
+.animes-list img {
+    max-width: 100%;
+}
+
+.animes-list-padding {
+    padding-bottom: 20px;
+}
