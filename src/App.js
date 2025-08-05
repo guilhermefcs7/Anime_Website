@@ -11,13 +11,31 @@ function App() {
   const [info, setInfo] = useState({});
 
   useEffect(() => {
-    if (text) {
-      fetch(`${api}anime?filter[text]=${text}&page[limit]=15`)
-        .then((response) => response.json())
-        .then((response) => {
-          setInfo(response);
-        });
+    if (!text) {
+      return;
     }
+
+    // abort previous requests to avoid race conditions when the user
+    // types quickly and multiple fetches are in flight
+    const controller = new AbortController();
+    // reset info so that loading state can be displayed
+    setInfo({});
+
+    fetch(`${api}anime?filter[text]=${text}&page[limit]=15`, {
+      signal: controller.signal,
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        setInfo(response);
+      })
+      .catch((err) => {
+        // ignore abort errors, but log the others for visibility
+        if (err.name !== "AbortError") {
+          console.error(err);
+        }
+      });
+
+    return () => controller.abort();
   }, [text]);
 
   return (
